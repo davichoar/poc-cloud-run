@@ -13,7 +13,7 @@ todo_ref = db.collection('ltmle')
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: str):
+async def read_item(item_id: str):
     start_time = time.time()
     todo = todo_ref.document(item_id).get()
     content = todo.to_dict()
